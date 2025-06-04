@@ -1,0 +1,92 @@
+.top-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+}
+
+.logo-text {
+  font-size: 20px;
+  margin-left: 8px;
+  margin-right: 24px;
+  font-weight: 500;
+}
+
+.search-bar {
+  flex: 1;
+  max-width: 700px;
+  background: white;
+  border-radius: 8px;
+  margin-right: 20px;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.profile-button {
+  background-color: #795548;
+  color: white;
+  border-radius: 50%;
+  font-weight: bold;
+}
+
+.main-container {
+  display: flex;
+  height: calc(100vh - 64px);
+}
+
+.sidenav {
+  width: 70px;
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  background: #f5f5f5;
+}
+
+.content-area {
+  padding: 20px;
+}
+
+.note-input {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.note-field {
+  width: 600px;
+  background-color: #fff;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.note-placeholder {
+  text-align: center;
+  margin-top: 100px;
+  color: gray;
+}
+
+.lightbulb-icon {
+  font-size: 64px;
+  color: #e0e0e0;
+}
+
+.example-container {
+  width: 500px;
+  height: 300px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.example-sidenav-content {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.example-sidenav {
+  padding: 20px;
+}

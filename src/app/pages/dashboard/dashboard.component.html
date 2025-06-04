@@ -1,1 +1,56 @@
-<p>dashboard works!</p>
+
+    <mat-toolbar class="topbar">
+  <button mat-icon-button class="menu-icon" >
+    <mat-icon>menu</mat-icon>
+  </button>
+  <img src="https://www.gstatic.com/images/branding/product/2x/keep_2020q4_48dp.png" alt="Google Keep" width="50px" height="50px" class="image">
+  <span class="keep">Keep</span>
+
+  <div class="search-container">
+    <mat-icon class="search-icon">search</mat-icon>
+    <input matInput placeholder="Search" [(ngModel)]="searchText" class="search-input" />
+  </div>
+
+
+
+
+  <span class="example-spacer"></span>
+  <button mat-icon-button class="example-icon favorite-icon" >
+    <mat-icon>refresh</mat-icon>
+  </button>
+  <button mat-icon-button (click)="toggleView()">
+  <mat-icon>{{ isListView ? 'view_list' : 'view_module' }}</mat-icon>
+</button>
+
+ 
+   <button mat-icon-button class="settings" >
+    <mat-icon>settings</mat-icon>
+  </button>
+  <button mat-icon-button aria-label="Apps" class="apps" (click)="toggleApps()">
+  <mat-icon>apps</mat-icon>
+</button>
+
+<div  class="user">
+<button mat-icon-button>
+  <mat-icon>account_circle</mat-icon>
+</button>
+</div>
+</mat-toolbar>
+
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <p>Auto-resizing sidenav</p>
+    <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
+
+    <button (click)="showFiller = !showFiller" matButton="elevated">
+      Toggle extra text
+    </button>
+  </mat-drawer>
+
+  <div class="example-sidenav-content">
+    <button type="button" matButton (click)="drawer.toggle()">
+      Toggle sidenav
+    </button>
+  </div>
+
+</mat-drawer-container>

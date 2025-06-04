@@ -1,14 +1,37 @@
 import { Injectable } from '@angular/core';
-import { HttpService } from '../http/http.service';
+import { HttpService } from '../../Services/http/http.service';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
+ constructor(private httpService: HttpService) { }
 
-  constructor(private http:HttpService) { }
+  // Register user
+  signup(payload: any): Observable<any> {
+    return this.httpService.postApi('/user/userSignup', payload);
+  }
 
-  login(payload:any){
-    return this.http.postApi('user/login',payload)
+  // Login user  
+  signIn(payload: any): Observable<any> {
+    return this.httpService.postApi('/user/login', payload);
+  }
+
+  // Logout user
+  logout(): void {
+    localStorage.removeItem('authToken');
+    localStorage.removeItem('userData');
+  }
+
+  // Check if user is logged in
+  isLoggedIn(): boolean {
+    return !!localStorage.getItem('authToken');
+  }
+
+  // Get user data
+  getUserData(): any {
+    const userData = localStorage.getItem('userData');
+    return userData ? JSON.parse(userData) : null;
   }
 }

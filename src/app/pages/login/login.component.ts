@@ -24,7 +24,7 @@ import { UserService } from '../../Services/User/user.service';
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
-    MatSnackBarModule
+    MatSnackBarModule,
   ],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],

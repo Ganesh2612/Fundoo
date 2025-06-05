@@ -196,11 +196,25 @@ button mat-icon:focus {
 }
 mat-icon :last-child {
   color: black;
-}mat-sidenav-container {
-  height: 100vh;
 }
 
-mat-sidenav {
-  width: 240px;
-  background-color: #fff;
+.apps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 4px);
+  grid-gap: 4px;
+  width: 16px;
+  height: 16px;
+  justify-content: center;
+  align-items: center;
+}
+
+.dot {
+  width: 5px;
+  height: 4px;
+  background-color: grey;
+  border-radius: 50%;
+}
+
+mat-toolbar{
+    height:200px;
 }

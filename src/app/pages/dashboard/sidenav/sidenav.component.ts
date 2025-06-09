@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatSidenavModule} from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
@@ -12,11 +12,10 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrls: ['./sidenav.component.scss']
 })
 export class SidenavComponent {
-isSidebarOpen = false;
+ selected = 'notes';
+ isVisible=false;
 
-toggleSidebar() {
-  this.isSidebarOpen = !this.isSidebarOpen;
-}
-// @Input() isOpen = false;
-
+  select(item: string) {
+    this.selected = item;
+  }
 }

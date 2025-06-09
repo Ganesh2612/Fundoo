@@ -1,5 +1,4 @@
 <mat-toolbar class="toolbar" color="primary">
-
   <div class="left-section">
     <button mat-icon-button (click)="toggleSidebar()">
       <mat-icon>menu</mat-icon>
@@ -14,47 +13,39 @@
   </div>
 
   <div class="right-section">
-  
-    <button mat-icon-button class="mobile-search" (click)="mobileSearchOpen = true">
+    <button
+      mat-icon-button
+      class="mobile-search"
+      (click)="mobileSearchOpen = true">
       <mat-icon>search</mat-icon>
     </button>
 
- 
-    <button mat-icon-button  (click)="refreshPage()">
-  <mat-icon style="font-size: 24px; color: #5f6368;">refresh</mat-icon>
+    <button mat-icon-button (click)="refreshPage()">
+      <mat-icon>refresh</mat-icon>
+    </button>
 
+    <button mat-icon-button (click)="toggleView()">
+      <mat-icon>{{
+        isGrid ? "view_stream_outline" : "grid_view"
+      }}</mat-icon>
+    </button>
+
+   <button mat-icon-button>
+  <mat-icon fontSet="material-symbols-outlined" fontIcon="settings">settings</mat-icon>
 </button>
 
 
-   
-  <button mat-icon-button aria-label="Grid View">
-  <mat-icon>grid_view</mat-icon>
-</button>
 
+    <span class="right-gap"></span>
 
-    
-    <button mat-icon-button style="color:white">
-  <mat-icon>settings</mat-icon>
-</button>
+    <button mat-icon-button>
+      <mat-icon fontSet="material-symbols-outlined" fontIcon="apps">apps</mat-icon
+      >
+    </button>
 
-
-      <span class="right-gap"></span>
-
-
-    <button mat-icon-button class="apps-icon-btn">
-  <div class="apps-grid">
-    <span *ngFor="let dot of dots" class="dot"></span>
-  </div>
-</button>
-
-
-    
     <button mat-icon-button><mat-icon>account_circle</mat-icon></button>
   </div>
- 
 </mat-toolbar>
-
-
 
 <div class="mobile-search-bar" *ngIf="mobileSearchOpen">
   <mat-icon>search</mat-icon>

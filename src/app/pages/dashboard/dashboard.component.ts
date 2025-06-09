@@ -3,18 +3,21 @@ import { CommonModule } from '@angular/common';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { NotesComponent } from '../Components/notes/notes.component';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
   imports: [
-   CommonModule, ToolbarComponent , SidenavComponent , MatSidenavModule]
+   CommonModule, ToolbarComponent , SidenavComponent , MatSidenavModule,NotesComponent]
   ,
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent {
-   isSidenavOpen = false;   
+  
+
+isSidenavOpen = false;
   isHovered = false;
 
   get sidenavOpened(): boolean {
@@ -28,4 +31,5 @@ export class DashboardComponent {
   onMouseLeaveSidenav() {
     this.isHovered = false;
   }
+   
 }

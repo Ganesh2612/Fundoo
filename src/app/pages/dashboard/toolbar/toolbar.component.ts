@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Output ,Input} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatIconModule} from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -12,22 +12,22 @@ import { MatToolbarModule} from '@angular/material/toolbar';
   styleUrls: ['./toolbar.component.scss']
 })
 export class ToolbarComponent {
-isGrid = true;
-dots = new Array(9);
+  isGrid = true;
 
-toggleView() {
-  this.isGrid = !this.isGrid;
-}
+  toggleView() {
+    this.isGrid = !this.isGrid;
+  }
 
-refreshPage() {
-  location.reload();
-}
+  refreshPage() {
+    location.reload();
+    
+  }
 
-@Output() menuClicked = new EventEmitter<void>()
+  @Output() menuClicked = new EventEmitter<void>();
 
-toggleSidebar() {
-  this.menuClicked.emit();
-}
+  toggleSidebar() {
+    this.menuClicked.emit();
+  }
 
-mobileSearchOpen = false;
+  mobileSearchOpen = false;
 }

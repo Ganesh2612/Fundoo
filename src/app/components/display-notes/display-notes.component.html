@@ -1,0 +1,26 @@
+<div [ngClass]="viewMode === 'grid' ? 'note-grid' : 'note-list'">
+  <mat-card
+    *ngFor="let note of notes"
+    class="note-card"
+    [style.background]="note.color || '#fff'"
+    (mouseenter)="onMouseEnter(note.id)"
+    (mouseleave)="onMouseLeave()"
+  >
+    <h3>{{ note.title }}</h3>
+    <p>{{ note.description }}</p>
+
+    <app-notes-icon
+      *ngIf="hoveredNoteId === note.id"
+      [note]="note"
+      [showReminder]="true"
+      [showCollaborator]="true"
+      [showColor]="true"
+      [showImage]="true"
+      [showArchive]="true"
+      [showTrash]="false"
+      [showMore]="true"
+      [showRedo]="false"
+      [showUndo]="false"
+    ></app-notes-icon>
+  </mat-card>
+</div>

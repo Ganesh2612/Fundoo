@@ -1,0 +1,29 @@
+.note-grid {
+  display: flex;
+  display: block;
+  flex-wrap: wrap;
+ margin:10px auto;
+  
+}
+
+.note-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  
+  
+}
+
+.note-card {
+  background-color: var(--default-bg, white);
+  width: 600px;
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+  margin:auto;
+  margin-bottom:10px;
+}
+
+.note-list .note-card {
+  width: 45%; 
+}

@@ -58,4 +58,11 @@ selectColor(color: string): void {
     this.showColorPicker = false;
   }
 }
+@Output() archiveClicked = new EventEmitter<void>();
+
+onArchive() {
+  this.archiveClicked.emit();
+}
+
+
 }

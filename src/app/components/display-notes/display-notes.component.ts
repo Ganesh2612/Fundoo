@@ -16,7 +16,7 @@ import { NotesComponent } from '../notes/notes.component';
   templateUrl: './display-notes.component.html',
   styleUrls: ['./display-notes.component.scss']
 })
-export class DisplayNotesComponent {
+export class DisplayNotesComponent implements OnInit {
   @Input() viewMode: 'grid' | 'list' = 'grid';
   notes: any[] = []; 
   hoveredNoteId: string | null = null;
@@ -38,7 +38,7 @@ export class DisplayNotesComponent {
       next: (res: any) => {
         this.notes = res.data.data.filter((note: any) => !note.isArchived && !note.isDeleted);
       },
-      error: (err:any) => {
+      error: (err: any) => {
         console.error('Error fetching notes:', err);
       }
     });
@@ -51,5 +51,22 @@ export class DisplayNotesComponent {
   onMouseLeave(): void {
     this.hoveredNoteId = null;
   }
+
+  onArchiveNote(noteId: string): void {
+    const payload = {
+      noteIdList: [noteId],
+      isArchived: true
+    };
+
+    this.notesService.archiveNote(payload).subscribe({
+      next: () => {
+        this.refreshService.triggerRefresh(); // Refresh notes
+      },
+      error: (err: any) => {
+        console.error('Archive failed:', err);
+      }
+    });
+  }
 }
+
 

@@ -20,20 +20,21 @@ archivedNotes: any[] = [];
 
   constructor(private notesService: NotesService) {}
 
-  ngOnInit(): void {
-    this.loadArchivedNotes();
-  }
+ ngOnInit(): void {
+  this.loadArchivedNotes();
+}
 
-  loadArchivedNotes() {
-    this.notesService.getNotes().subscribe({
-      next: (res: any) => {
-        this.archivedNotes = res.data.data.filter(
-          (note: any) => note.isArchived && !note.isDeleted
-        );
-      },
-      error: (err:any) => console.error('Failed to load archived notes', err),
-    });
-  }
+loadArchivedNotes() {
+  this.notesService.getNotes().subscribe({
+    next: (res: any) => {
+      this.archivedNotes = res.data.data.filter(
+        (note: any) => note.isArchived && !note.isDeleted
+      );
+    },
+    error: (err: any) => console.error('Failed to load archived notes', err),
+  });
+}
+
 
 
 }

@@ -1,21 +1,13 @@
-
 <div class="archive-container">
-  <h2 class="title">Archived Notes</h2>
-
+  <h2>Archived Notes</h2>
   <div class="notes-wrapper">
     <mat-card
-      class="note-card"
       *ngFor="let note of archivedNotes"
       [style.background]="note.color || '#fff'"
+      class="note-card"
     >
       <h3>{{ note.title }}</h3>
       <p>{{ note.description }}</p>
-
-      <!-- Optional: Add icons or controls here -->
-      <div class="icon-footer">
-        <mat-icon>archive</mat-icon>
-        <!-- Add more icons if needed -->
-      </div>
     </mat-card>
   </div>
 </div>

@@ -53,20 +53,25 @@ export class DisplayNotesComponent implements OnInit {
   }
 
   onArchiveNote(noteId: string): void {
-    const payload = {
-      noteIdList: [noteId],
-      isArchived: true
-    };
+  const payload = {
+    noteIdList: [noteId],
+    isArchived: true
+  };
 
-    this.notesService.archiveNote(payload).subscribe({
-      next: () => {
-        this.refreshService.triggerRefresh(); // Refresh notes
-      },
-      error: (err: any) => {
-        console.error('Archive failed:', err);
-      }
-    });
-  }
+  this.notesService.archiveNote(payload).subscribe({
+    next: () => {
+      // Remove the archived note from the current notes array instantly
+      this.notes = this.notes.filter(note => note.id !== noteId);
+
+      // Optional: trigger refresh if other components depend on it
+      this.refreshService.triggerRefresh();
+    },
+    error: (err: any) => {
+      console.error('Archiving failed:', err);
+    }
+  });
+}
+
 }
 
 

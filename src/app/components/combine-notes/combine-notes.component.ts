@@ -13,26 +13,28 @@ import { NoteRefreshService } from 'src/app/Services/notes/notes-refresh.service
   styleUrls: ['./combine-notes.component.scss']
 })
 export class CombineNotesComponent {
-//   viewMode: 'grid' | 'list' = 'grid';
-//  onViewModeChange(mode: 'grid' | 'list') {
-//   this.viewMode = mode;
-//   }
-  
-//   ngOnInit(): void {
-//       this.fetchNotes(); 
-//     this.refreshService.refreshNeeded.subscribe(() => {
-//       this.fetchNotes();
-//     });
-//   }
-// fetchNotes(): void {
-//     this.notesService.getNotes().subscribe({
-//       next: (res: any) => {
-//         this.notes = res.data.data.filter((note: any) => !note.isArchived && !note.isDeleted);
-//       },
-//       error: (err: any) => {
-//         console.error('Error fetching notes:', err);
-//       }
-//     });
-//   }
+  viewMode: 'grid' | 'list' = 'grid';
+ onViewModeChange(mode: 'grid' | 'list') {
+  this.viewMode = mode;
+  }
+  notes:[]=[];
+   constructor(
+      private notesService: NotesService,
+      private refreshService: NoteRefreshService
+    ) {}
+  ngOnInit(): void {
+      this.fetchNotes(); 
+    
+  }
+fetchNotes(): void {
+    this.notesService.getNotes().subscribe({
+      next: (res: any) => {
+        this.notes = res.data.data.filter((note: any) => !note.isArchived && !note.isDeleted);
+      },
+      error: (err: any) => {
+        console.error('Error fetching notes:', err);
+      }
+    });
+  }
 
 }

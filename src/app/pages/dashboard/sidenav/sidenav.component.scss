@@ -14,6 +14,12 @@
   transition: background-color 0.2s ease;
 }
 
+.selected {
+  background-color: #e8f0fe;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
 .nav-item mat-icon {
   font-size: 1.6em;
   color: #5f6368;

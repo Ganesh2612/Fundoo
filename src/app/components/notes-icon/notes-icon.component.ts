@@ -60,9 +60,10 @@ selectColor(color: string): void {
 }
 @Output() archiveClicked = new EventEmitter<void>();
 
-onArchive() {
+onArchiveClick() {
   this.archiveClicked.emit();
 }
+
 
 
 }

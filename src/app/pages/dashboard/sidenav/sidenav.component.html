@@ -1,45 +1,62 @@
 <mat-nav-list class="sidenav-list">
-  <div
+  <a
+    mat-list-item
     class="nav-item"
+    routerLink="/dashboard/notes"
+    routerLinkActive="selected"
     [ngClass]="{ selected: selected === 'notes' }"
-    (click)="select('notes')">
+    (click)="select('notes','/notes')"
+  >
     <mat-icon>lightbulb_outline</mat-icon>
-
     <span>Notes</span>
-  </div>
+  </a>
 
-  <div
+  <a
+    mat-list-item
     class="nav-item"
+    routerLink="/dashboard/reminders"
+    routerLinkActive="selected"
     [ngClass]="{ selected: selected === 'reminders' }"
-    (click)="select('reminders')">
+    (click)="select('reminders','/reminders')"
+  >
     <mat-icon fontSet="material-symbols-outlined" fontIcon="notifications">notifications</mat-icon>
     <span>Reminders</span>
-  </div>
+  </a>
 
-  <div
+  <a
+    mat-list-item
     class="nav-item"
+    routerLink="/dashboard/labels"
+    routerLinkActive="selected"
     [ngClass]="{ selected: selected === 'labels' }"
-    (click)="select('labels')">
+    (click)="select('labels','/labels')"
+  >
     <mat-icon fontSet="material-symbols-outlined" fontIcon="edit">edit</mat-icon>
     <span>Edit labels</span>
-  </div>
+  </a>
 
-  <div
-    class="nav-item"
-    [ngClass]="{ selected: selected === 'archive' }"
-    (click)="select('archive')">
-    <mat-icon fontSet="material-symbols-outlined" fontIcon="archive">archive</mat-icon>
-    <span>Archive</span>
-  </div>
+ <a
+  mat-list-item
+  class="nav-item"
+  routerLink="/dashboard/archive"
+  routerLinkActive="selected"
+  [ngClass]="{ selected: selected === 'archive' }"
+  (click)="select('archive', 'archive')"
+>
+  <mat-icon fontSet="material-symbols-outlined" fontIcon="archive">archive</mat-icon>
+  <span>Archive</span>
+</a>
 
-  <div
+
+  <a
+    mat-list-item
     class="nav-item"
+    routerLink="/dashboard/trash"
+    routerLinkActive="selected"
     [ngClass]="{ selected: selected === 'trash' }"
-    (click)="select('trash')">
+    (click)="select('trash','/trash')"
+  >
     <mat-icon fontSet="material-symbols-outlined" fontIcon="delete">delete</mat-icon>
     <span>Trash</span>
-  </div>
+  </a>
 </mat-nav-list>
-
-<p *ngIf="isVisible">This is only in DOM if visible</p>
-

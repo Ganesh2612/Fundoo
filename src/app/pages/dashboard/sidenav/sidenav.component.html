@@ -14,13 +14,13 @@
   <a
     mat-list-item
     class="nav-item"
-    routerLink="/dashboard/reminders"
+    routerLink="/dashboard/remainders"
     routerLinkActive="selected"
-    [ngClass]="{ selected: selected === 'reminders' }"
-    (click)="select('reminders','/reminders')"
+    [ngClass]="{ selected: selected === 'remainders' }"
+    (click)="select('remainders','remainders')"
   >
     <mat-icon fontSet="material-symbols-outlined" fontIcon="notifications">notifications</mat-icon>
-    <span>Reminders</span>
+    <span>Remainders</span>
   </a>
 
   <a
@@ -29,7 +29,7 @@
     routerLink="/dashboard/labels"
     routerLinkActive="selected"
     [ngClass]="{ selected: selected === 'labels' }"
-    (click)="select('labels','/labels')"
+    (click)="select('labels','labels')"
   >
     <mat-icon fontSet="material-symbols-outlined" fontIcon="edit">edit</mat-icon>
     <span>Edit labels</span>
@@ -54,7 +54,7 @@
     routerLink="/dashboard/trash"
     routerLinkActive="selected"
     [ngClass]="{ selected: selected === 'trash' }"
-    (click)="select('trash','/trash')"
+    (click)="select('trash','trash')"
   >
     <mat-icon fontSet="material-symbols-outlined" fontIcon="delete">delete</mat-icon>
     <span>Trash</span>

@@ -1,35 +1,29 @@
-.archive-container {
-  padding: 20px;
+.note-grid {
+  display: flex;
+  display: block;
+  flex-wrap: wrap;
+ margin:10px auto;
+  
 }
 
-.title {
-  font-size: 24px;
-  margin-bottom: 16px;
-  color: #3c4043;
-}
-
-.notes-wrapper {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 16px;
+.note-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  
+  
 }
 
 .note-card {
-  padding: 16px;
+  background-color: var(--default-bg, white);
+  width: 600px;
+  padding: 12px;
   border-radius: 8px;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
-  word-wrap: break-word;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+  margin:auto;
+  margin-bottom:10px;
 }
 
-.icon-footer {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 8px;
-}
-
-mat-icon {
-  cursor: pointer;
-  font-size: 20px;
-  margin-left: 8px;
-  color: #5f6368;
+.note-list .note-card {
+  width: 45%; 
 }

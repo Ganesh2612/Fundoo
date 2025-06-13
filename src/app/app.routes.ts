@@ -5,7 +5,9 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { AuthGuardService } from './Services/authGuard/auth-guard.service';
 import { NotesComponent } from './components/notes/notes.component';
 
-
+import { EditLabelsComponent } from './components/edit-labels/edit-labels.component';
+import { TrashComponent } from './components/trash/trash.component';
+import { RemaindersComponent } from './components/remainders/remainders.component';
 import { ArchiveComponent } from './components/archive/archive.component';
 import { CombineNotesComponent } from './components/combine-notes/combine-notes.component';
 
@@ -27,6 +29,18 @@ export const routes: Routes = [
   path: 'archive',
   loadComponent: () =>
     import('./components/archive/archive.component').then(m => m.ArchiveComponent)
+}, {
+  path: 'trash',
+  loadComponent: () =>
+    import('./components/trash/trash.component').then(m => m.TrashComponent)
+},
+{path: 'remainders',
+  loadComponent: () =>
+    import('./components/remainders/remainders.component').then(m => m.RemaindersComponent)
+},
+{path: 'labels',
+  loadComponent: () =>
+    import('./components/edit-labels/edit-labels.component').then(m => m.EditLabelsComponent)
 },
       
     ],

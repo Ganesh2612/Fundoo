@@ -1,13 +1,27 @@
-<div class="archive-container">
-  <h2>Archived Notes</h2>
-  <div class="notes-wrapper">
-    <mat-card
-      *ngFor="let note of archivedNotes"
-      [style.background]="note.color || '#fff'"
-      class="note-card"
-    >
-      <h3>{{ note.title }}</h3>
-      <p>{{ note.description }}</p>
-    </mat-card>
-  </div>
+<div [ngClass]="viewMode === 'grid' ? 'note-grid' : 'note-list'">
+  <mat-card
+    *ngFor="let note of archivedNotes"
+    class="note-card"
+    [style.background]="note.color || '#fff'"
+    (mouseenter)="onMouseEnter(note.id)"
+    (mouseleave)="onMouseLeave()"
+  >
+    <h3>{{ note.title }}</h3>
+    <p>{{ note.description }}</p>
+
+    <app-notes-icon
+      *ngIf="hoveredNoteId === note.id"
+      [note]="note"
+      [showReminder]="true"
+      [showCollaborator]="true"
+      [showColor]="true"
+      [showImage]="true"
+      [showArchive]="true"
+      [showTrash]="false"
+      [showMore]="true"
+      [showRedo]="false"
+      [showUndo]="false"
+      (archiveClicked)="onArchiveNote(note.id)"
+    ></app-notes-icon>
+  </mat-card>
 </div>

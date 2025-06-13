@@ -15,7 +15,7 @@ import { RouterOutlet } from '@angular/router';
   selector: 'app-dashboard',
   standalone: true,
   imports: [
-   CommonModule, ToolbarComponent , SidenavComponent , MatSidenavModule, NotesComponent, DisplayNotesComponent,RouterOutlet, ],
+   CommonModule, ToolbarComponent , SidenavComponent , MatSidenavModule, NotesComponent, DisplayNotesComponent,RouterOutlet],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })

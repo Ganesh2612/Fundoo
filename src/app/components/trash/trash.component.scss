@@ -1,0 +1,66 @@
+.note-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: flex-start;
+  margin: 10px auto;
+}
+
+.note-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 10px auto;
+}
+
+.note-card {
+  position: relative;
+  background-color: var(--default-bg, white);
+  padding: 16px;
+  padding-bottom: 56px; /* reserve space for icons */
+  border-radius: 8px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+  margin: 10px;
+  width: 300px; /* grid default */
+  transition: box-shadow 0.2s ease;
+
+  &:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
+}
+
+.note-list .note-card {
+  width: 600px; /* full width in list view */
+  margin: 0 auto 10px auto;
+}
+
+.note-icons-wrapper {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  display: flex;
+  gap: 8px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease-in-out;
+
+  /* show on hover */
+  .note-card:hover & {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+.action-icon {
+  font-size: 20px;
+  padding: 6px;
+  border-radius: 50%;
+  transition: background-color 0.2s ease-in-out;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.action-icon:hover {
+  background-color: rgba(0, 0, 0, 0.1); /* subtle hover effect */
+}
